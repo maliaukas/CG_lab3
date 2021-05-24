@@ -61,7 +61,7 @@ fun main() {
                     ButtonType.POWER -> power(img, elementWiseValue.text.toDouble())
                     ButtonType.MULTIPLY -> mul(img, elementWiseValue.text.toDouble())
                     ButtonType.LINEAR_CONTR -> linearContrast(img)
-                    ButtonType.ADAPTIVE -> adaptive(img)
+                    ButtonType.ADAPTIVE -> adaptive(img, localMethodRValue.text.toInt())
                     ButtonType.BERNSEN, ButtonType.SAUVOLA -> {
                         val r = localMethodRValue.text.toInt()
                         if (r % 2 == 0) {

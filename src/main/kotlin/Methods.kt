@@ -73,17 +73,17 @@ fun linearContrast(m: Mat): Mat {
     return r
 }
 
-fun adaptive(m: Mat): Mat {
-    val r = Mat.zeros(m.rows(), m.cols(), m.type())
-    cvtColor(m, r, COLOR_BGR2GRAY)
+fun adaptive(m: Mat, r:Int = 11): Mat {
+    val res = Mat.zeros(m.rows(), m.cols(), m.type())
+    cvtColor(m, res, COLOR_BGR2GRAY)
     Imgproc.adaptiveThreshold(
-        r, r, 255.0,
+        res, res, 255.0,
         Imgproc.ADAPTIVE_THRESH_GAUSSIAN_C,
         Imgproc.THRESH_BINARY,
-        11,
+        r,
         3.0
     )
-    return r
+    return res
 }
 
 enum class LocalMethodType {

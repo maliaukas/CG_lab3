@@ -20,7 +20,7 @@ repositories {
 dependencies {
     implementation(compose.desktop.currentOs)
     // https://mvnrepository.com/artifact/org.openpnp/opencv
-    implementation(group= "org.openpnp", name= "opencv", version= "4.5.1-2")
+    implementation(group = "org.openpnp", name = "opencv", version = "4.5.1-2")
 
 }
 
@@ -32,7 +32,7 @@ compose.desktop {
     application {
         mainClass = "MainKt"
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Exe, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "lab3"
         }
     }
